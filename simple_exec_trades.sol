@@ -126,3 +126,69 @@ contract ExecTrades {
     }
 }
 
+contract test_ExecTrades {
+    uint private constant NUM_OF_TRADES = 3;
+    address[NUM_OF_TRADES] /*constant*/
+        private DEXES = [uniswap_v2_router, sushi_v2_router, pancake_v2_router];
+    address[NUM_OF_TRADES] /*constant*/
+        private TOKENS = [token_wbtc, token_usdc, token_weth];
+
+    mapping(address => string) private dex_router_names;
+    mapping(address => string) private out_token_names;
+
+    uint256 private constant TRADE_SIZE = 5 * WEI_PER_ETH;
+
+    constructor() {
+        dex_router_names[uniswap_v2_router] = "UniSwapV2";
+        dex_router_names[sushi_v2_router] = "SushiSwapV2";
+        dex_router_names[pancake_v2_router] = "PancakeSwapV2";
+        out_token_names[token_wbtc] = "WBTC";
+        out_token_names[token_usdc] = "USDC";
+        out_token_names[token_weth] = "WETH";
+    }
+
+    function unit_test_route(address addr, uint8[] calldata indices)
+        external
+    {
+        assert(indices.length == 2 * NUM_OF_TRADES);
+
+        ExecTrades c = ExecTrades(addr);
+
+        address[][2] memory trades;
+        trades[0] = new address[](NUM_OF_TRADES);
+        trades[1] = new address[](NUM_OF_TRADES);
+
+        for (uint j = 0; j < NUM_OF_TRADES; j++) {
+            dex_addr(trades)[j] = DEXES[indices[j]];
+            out_addr(trades)[j] = TOKENS[indices[j + NUM_OF_TRADES]];
+        }
+
+        string memory str = "Input indices:";
+        for (uint j = 0; j < 2 * NUM_OF_TRADES; j++) {
+            str = string.concat(str, " ");
+            str = string.concat(str, Strings.toString(indices[j]));
+        }
+        console.log(str);
+        str = out_token_names[out_addr(trades)[NUM_OF_TRADES - 1]];
+        for (uint j = 0; j < NUM_OF_TRADES; j++) {
+            str = string.concat(str, " --> ");
+            str = string.concat(str, out_token_names[out_addr(trades)[j]]);
+        }
+        console.log("Tokens route: ", str);
+        str = "DEX route:";
+        for (uint j = 0; j < NUM_OF_TRADES; j++) {
+            str = string.concat(str, " ");
+            str = string.concat(str, dex_router_names[dex_addr(trades)[j]]);
+        }
+        console.log(str);
+
+        try c.execute_trades(trades, TRADE_SIZE) {
+            console.log("Result: profitable !");
+        } catch Error(string memory _err) {
+            console.log("Result: ", _err);
+        } catch (bytes memory _err) {
+            console.log("Result: low-level error ", string(_err));
+        }
+    }
+}
+
