@@ -33,6 +33,14 @@ interface IERC20 {
     function approve(address spender, uint256 amount) external returns (bool);
 }
 
+interface IWETH is IERC20 {
+    receive() external payable;
+
+    function deposit() external payable;
+
+    function withdraw(uint256 wad) external;
+}
+
 /* struct TradeInstruction { //problematic to pass as arg
         address dex_router_addr;
         address out_token_addr;
@@ -97,6 +105,24 @@ contract ExecTrades {
 
         uint256 final_balance = IERC20(in_token).balanceOf(address(this));
         require(final_balance > start_balance, "Unprofitable trade route.");
+    }
+
+    address payable private constant WETH = payable(token_weth);
+
+    //To obtain initial tokens.
+    function wrapEther() external payable {
+        uint256 balanceBefore = IWETH(WETH).balanceOf(address(this));
+        uint256 ETHAmount = msg.value;
+
+        //create WETH from ETH
+        if (ETHAmount != 0) {
+            IWETH(WETH).deposit{value: ETHAmount}();
+            IWETH(WETH).transfer(address(this), ETHAmount);
+        }
+        require(
+            IWETH(WETH).balanceOf(address(this)) - balanceBefore == ETHAmount,
+            "Ethereum not deposited"
+        );
     }
 }
 
