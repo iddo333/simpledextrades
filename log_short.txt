@@ -1,0 +1,39 @@
+creation of ExecTrades pending...
+[vm]from: 0x5B3...eddC4to: ExecTrades.(constructor)value: 0 weidata: 0x608...20033logs: 0hash: 0xba3...33367
+transact to ExecTrades.wrapEther pending ...
+[vm]from: 0x5B3...eddC4to: ExecTrades.wrapEther() 0x4a9...E31bfvalue: 20000000000000000000 weidata: 0x6f1...296d2logs: 0hash: 0x6b3...f744b
+creation of test_ExecTrades pending...
+[vm]from: 0x5B3...eddC4to: test_ExecTrades.(constructor)value: 0 weidata: 0x608...20033logs: 0hash: 0xd26...de92e
+
+transact to test_ExecTrades.unit_test_route pending ...
+console.log:
+Input indices: 1 0 2 0 1 2
+Tokens route: WETH --> WBTC --> USDC --> WETH
+DEX route: SushiSwapV2 UniSwapV2 PancakeSwapV2
+Result: Unprofitable trade route.
+[vm]from: 0x5B3...eddC4to: test_ExecTrades.unit_test_route(address,uint8[]) 0xEf9...10eBfvalue: 0 weidata: 0xe13...00002logs: 0hash: 0x451...e4d28
+
+transact to test_ExecTrades.unit_test_route pending ...
+console.log:
+Input indices: 0 1 2 0 1 2
+Tokens route: WETH --> WBTC --> USDC --> WETH
+DEX route: UniSwapV2 SushiSwapV2 PancakeSwapV2
+Result: low-level error
+[vm]from: 0x5B3...eddC4to: test_ExecTrades.unit_test_route(address,uint8[]) 0xEf9...10eBfvalue: 0 weidata: 0xe13...00002logs: 0hash: 0xab4...862cd
+
+transact to test_ExecTrades.unit_test_route pending ...
+console.log:
+Input indices: 0 0 0 0 1 2
+Tokens route: WETH --> WBTC --> USDC --> WETH
+DEX route: UniSwapV2 UniSwapV2 UniSwapV2
+Result: Unprofitable trade route.
+[vm]from: 0x5B3...eddC4to: test_ExecTrades.unit_test_route(address,uint8[]) 0xEf9...10eBfvalue: 0 weidata: 0xe13...00002logs: 0hash: 0xc2e...d2dee
+
+transact to test_ExecTrades.unit_test_route pending ...
+console.log:
+Input indices: 0 0 0 2 1 2
+Tokens route: WETH --> WETH --> USDC --> WETH
+DEX route: UniSwapV2 UniSwapV2 UniSwapV2
+Result: UniswapV2Library: IDENTICAL_ADDRESSES
+[vm]from: 0x5B3...eddC4to: test_ExecTrades.unit_test_route(address,uint8[]) 0xEf9...10eBfvalue: 0 weidata: 0xe13...00002logs: 0hash: 0x50c...e5bc5
+>

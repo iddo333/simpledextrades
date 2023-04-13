@@ -1,0 +1,159 @@
+creation of ExecTrades pending...
+[vm]from: 0x5B3...eddC4to: ExecTrades.(constructor)value: 0 weidata: 0x608...20033logs: 0hash: 0xba3...33367
+status	true Transaction mined and execution succeed
+transaction hash	0xba38994775e6bff91f4e48bd759eda5ff539fe2a18676294c58434d6c2b33367
+from	0x5B38Da6a701c568545dCfcB03FcB875f56beddC4
+to	ExecTrades.(constructor)
+gas	1156995 gas
+transaction cost	1006082 gas
+execution cost	885322 gas
+input	0x608...20033
+decoded input	{}
+decoded output	 -
+logs	[]
+val	0 wei
+transact to ExecTrades.wrapEther pending ...
+[vm]from: 0x5B3...eddC4to: ExecTrades.wrapEther() 0x4a9...E31bfvalue: 20000000000000000000 weidata: 0x6f1...296d2logs: 0hash: 0x6b3...f744b
+status	true Transaction mined and execution succeed
+transaction hash	0x6b34e3b8c70f1ba113eb18df16d0b5ac1d50f84bc8b737a51efac315355f744b
+from	0x5B38Da6a701c568545dCfcB03FcB875f56beddC4
+to	ExecTrades.wrapEther() 0x4a9C121080f6D9250Fc0143f41B595fD172E31bf
+gas	116455 gas
+transaction cost	44365 gas
+execution cost	26101 gas
+input	0x6f1...296d2
+decoded input	{}
+decoded output	{}
+logs	[]
+val	20000000000000000000 wei
+creation of test_ExecTrades pending...
+[vm]from: 0x5B3...eddC4to: test_ExecTrades.(constructor)value: 0 weidata: 0x608...20033logs: 0hash: 0xd26...de92e
+status	true Transaction mined and execution succeed
+transaction hash	0xd26a3448c716928f6aa4dfe8270e17457334e54cbadb4850a432336a069de92e
+from	0x5B38Da6a701c568545dCfcB03FcB875f56beddC4
+to	test_ExecTrades.(constructor)
+gas	1787287 gas
+transaction cost	1554162 gas
+execution cost	1383890 gas
+input	0x608...20033
+decoded input	{}
+decoded output	 -
+logs	[]
+val	0 wei
+transact to test_ExecTrades.unit_test_route pending ...
+console.log:
+Input indices: 1 0 2 0 1 2
+Tokens route: WETH --> WBTC --> USDC --> WETH
+DEX route: SushiSwapV2 UniSwapV2 PancakeSwapV2
+Result: Unprofitable trade route.
+[vm]from: 0x5B3...eddC4to: test_ExecTrades.unit_test_route(address,uint8[]) 0xEf9...10eBfvalue: 0 weidata: 0xe13...00002logs: 0hash: 0x451...e4d28
+status	true Transaction mined and execution succeed
+transaction hash	0x451185a4ef6501b488a32b3efd07cc193ca6696febb8ad1f0c890c605cfe4d28
+from	0x5B38Da6a701c568545dCfcB03FcB875f56beddC4
+to	test_ExecTrades.unit_test_route(address,uint8[]) 0xEf9f1ACE83dfbB8f559Da621f4aEA72C6EB10eBf
+gas	702682 gas
+transaction cost	504473 gas
+execution cost	481945 gas
+input	0xe13...00002
+decoded input	{
+	"address addr": "0x4a9C121080f6D9250Fc0143f41B595fD172E31bf",
+	"uint8[] indices": [
+		1,
+		0,
+		2,
+		0,
+		1,
+		2
+	]
+}
+decoded output	{}
+logs	[]
+val	0 wei
+transact to test_ExecTrades.unit_test_route pending ...
+console.log:
+Input indices: 0 1 2 0 1 2
+Tokens route: WETH --> WBTC --> USDC --> WETH
+DEX route: UniSwapV2 SushiSwapV2 PancakeSwapV2
+Result: low-level error
+[vm]from: 0x5B3...eddC4to: test_ExecTrades.unit_test_route(address,uint8[]) 0xEf9...10eBfvalue: 0 weidata: 0xe13...00002logs: 0hash: 0xab4...862cd
+status	true Transaction mined and execution succeed
+transaction hash	0xab4d642e13c3772307d0e2992135e1e9043285a0368660ba728d4084d49862cd
+from	0x5B38Da6a701c568545dCfcB03FcB875f56beddC4
+to	test_ExecTrades.unit_test_route(address,uint8[]) 0xEf9f1ACE83dfbB8f559Da621f4aEA72C6EB10eBf
+gas	343517 gas
+transaction cost	264510 gas
+execution cost	241982 gas
+input	0xe13...00002
+decoded input	{
+	"address addr": "0x4a9C121080f6D9250Fc0143f41B595fD172E31bf",
+	"uint8[] indices": [
+		0,
+		1,
+		2,
+		0,
+		1,
+		2
+	]
+}
+decoded output	{}
+logs	[]
+val	0 wei
+transact to test_ExecTrades.unit_test_route pending ...
+console.log:
+Input indices: 0 0 0 0 1 2
+Tokens route: WETH --> WBTC --> USDC --> WETH
+DEX route: UniSwapV2 UniSwapV2 UniSwapV2
+Result: Unprofitable trade route.
+[vm]from: 0x5B3...eddC4to: test_ExecTrades.unit_test_route(address,uint8[]) 0xEf9...10eBfvalue: 0 weidata: 0xe13...00002logs: 0hash: 0xc2e...d2dee
+status	true Transaction mined and execution succeed
+transaction hash	0xc2ece5be5c97629fb33b89daa0dfb8ff115195826b1b56a860ed45a58b5d2dee
+from	0x5B38Da6a701c568545dCfcB03FcB875f56beddC4
+to	test_ExecTrades.unit_test_route(address,uint8[]) 0xEf9f1ACE83dfbB8f559Da621f4aEA72C6EB10eBf
+gas	543602 gas
+transaction cost	472697 gas
+execution cost	450193 gas
+input	0xe13...00002
+decoded input	{
+	"address addr": "0x4a9C121080f6D9250Fc0143f41B595fD172E31bf",
+	"uint8[] indices": [
+		0,
+		0,
+		0,
+		0,
+		1,
+		2
+	]
+}
+decoded output	{}
+logs	[]
+val	0 wei
+transact to test_ExecTrades.unit_test_route pending ...
+console.log:
+Input indices: 0 0 0 2 1 2
+Tokens route: WETH --> WETH --> USDC --> WETH
+DEX route: UniSwapV2 UniSwapV2 UniSwapV2
+Result: UniswapV2Library: IDENTICAL_ADDRESSES
+[vm]from: 0x5B3...eddC4to: test_ExecTrades.unit_test_route(address,uint8[]) 0xEf9...10eBfvalue: 0 weidata: 0xe13...00002logs: 0hash: 0x50c...e5bc5
+status	true Transaction mined and execution succeed
+transaction hash	0x50cf02c7c224c77f06c3ba29e333a9f45f425a6a0103c9703800d205d55e5bc5
+from	0x5B38Da6a701c568545dCfcB03FcB875f56beddC4
+to	test_ExecTrades.unit_test_route(address,uint8[]) 0xEf9f1ACE83dfbB8f559Da621f4aEA72C6EB10eBf
+gas	157613 gas
+transaction cost	117154 gas
+execution cost	94638 gas
+input	0xe13...00002
+decoded input	{
+	"address addr": "0x4a9C121080f6D9250Fc0143f41B595fD172E31bf",
+	"uint8[] indices": [
+		0,
+		0,
+		0,
+		2,
+		1,
+		2
+	]
+}
+decoded output	{}
+logs	[]
+val	0 wei
+>
